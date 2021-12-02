@@ -1,0 +1,108 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"images","type":"map(uint256,string)"},
+				{"name":"metadatas","type":"map(uint256,string)"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintNft",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintNftAdmin",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setTotalMinted",
+			"inputs": [
+				{"name":"_totalMinted","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setMintFee",
+			"inputs": [
+				{"name":"_newFee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transferAdmin",
+			"inputs": [
+				{"name":"_newAdminPubkey","type":"uint256"},
+				{"name":"_newAdminAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendTransaction",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"},
+				{"name":"flags","type":"uint8"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "adminPubkey",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"adminPubkey","type":"uint256"}
+			]
+		},
+		{
+			"name": "totalMinted",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"totalMinted","type":"uint256"}
+			]
+		},
+		{
+			"name": "MINT_FEE",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"MINT_FEE","type":"uint128"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"adminPubkey","type":"uint256"},
+		{"name":"adminAddress","type":"address"},
+		{"name":"_addrRoot","type":"address"},
+		{"name":"totalMinted","type":"uint256"},
+		{"name":"MINT_FEE","type":"uint128"},
+		{"name":"_images","type":"map(uint256,string)"},
+		{"name":"_metadatas","type":"map(uint256,string)"}
+	]
+}

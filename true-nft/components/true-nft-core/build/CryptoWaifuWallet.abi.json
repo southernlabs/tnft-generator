@@ -1,0 +1,119 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"root","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendTransaction",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setRoot",
+			"inputs": [
+				{"name":"_waifuRoot","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mint",
+			"inputs": [
+				{"name":"userKey","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintPrice",
+			"inputs": [
+				{"name":"userKey","type":"uint256"},
+				{"name":"value","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transfer",
+			"inputs": [
+				{"name":"to","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"fee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "bid",
+			"inputs": [
+				{"name":"userKey","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"price","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "buy",
+			"inputs": [
+				{"name":"userKey","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"price","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "offer",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"price","type":"uint128"},
+				{"name":"fee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setName",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"name","type":"string"},
+				{"name":"fee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "registerWallet",
+			"inputs": [
+				{"name":"wallet","type":"address"},
+				{"name":"fee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"waifuRoot","type":"address"}
+	]
+}

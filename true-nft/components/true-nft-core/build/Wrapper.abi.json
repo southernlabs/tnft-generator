@@ -1,0 +1,212 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_addrRoot","type":"address"},
+				{"name":"_addrLegacyRoot","type":"address"},
+				{"name":"_adminPubkey","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "GetNewOwner",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "GetFeesPayed",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "IsWrapped",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "PayFee",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ConfirmWrap",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "GetWaifu",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "GetWaifuCallback",
+			"inputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"m","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendTransaction",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"},
+				{"name":"flags","type":"uint8"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setWrapFee",
+			"inputs": [
+				{"name":"_newFee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setAddresses",
+			"inputs": [
+				{"name":"_addrRoot","type":"address"},
+				{"name":"_addrLegacyRoot","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transferAdmin",
+			"inputs": [
+				{"name":"_newAdminPubkey","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addrRoot",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"addrRoot","type":"address"}
+			]
+		},
+		{
+			"name": "addrLegacyRoot",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"addrLegacyRoot","type":"address"}
+			]
+		},
+		{
+			"name": "adminPubkey",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"adminPubkey","type":"uint256"}
+			]
+		},
+		{
+			"name": "WRAP_FEE",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"WRAP_FEE","type":"uint128"}
+			]
+		},
+		{
+			"name": "lm",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"lm","type":"tuple"}
+			]
+		},
+		{
+			"name": "waifusNewOwners",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"waifusNewOwners","type":"map(uint256,address)"}
+			]
+		},
+		{
+			"name": "waifusWrapped",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"waifusWrapped","type":"map(uint256,bool)"}
+			]
+		},
+		{
+			"name": "waifusFeesPayed",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"waifusFeesPayed","type":"map(uint256,uint128)"}
+			]
+		},
+		{
+			"name": "wrappedCount",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"wrappedCount","type":"uint256"}
+			]
+		},
+		{
+			"name": "_await_ICryptoWaifuWrapper_getWaifu",
+			"inputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"value0","type":"tuple"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_await","type":"optional(cell)"},
+		{"name":"addrRoot","type":"address"},
+		{"name":"addrLegacyRoot","type":"address"},
+		{"name":"adminPubkey","type":"uint256"},
+		{"name":"WRAP_FEE","type":"uint128"},
+		{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"lm","type":"tuple"},
+		{"name":"waifusNewOwners","type":"map(uint256,address)"},
+		{"name":"waifusWrapped","type":"map(uint256,bool)"},
+		{"name":"waifusFeesPayed","type":"map(uint256,uint128)"},
+		{"name":"wrappedCount","type":"uint256"}
+	]
+}

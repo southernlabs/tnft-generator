@@ -1,0 +1,26 @@
+{
+  "name": "nft",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test-minter-ipfs":"yarn --cwd ./components/true-nft-core/ run compile && yarn --cwd ./components/true-nft-core/ run test",
+    "deploy": "yarn --cwd ./components/true-nft-core/ run deploy",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --exit -r ts-node/register -r dotenv/config -t 300000 'tests/**/*.test.ts'",
+    "compile": "yarn run",
+    "test:compile": "npm run compile && npm run test"
+  },
+  "workspaces": [
+    "apps/*",
+    "components/*",
+	"true-nft-core/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "dependencies": {
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^8.2.2",
+    "tondev": "^0.8.1",
+    "ts-mocha": "^8.0.0"
+  }
+}

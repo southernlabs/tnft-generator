@@ -1,0 +1,494 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mint",
+			"inputs": [
+				{"name":"userKey","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeUserWallet",
+			"inputs": [
+				{"name":"userKey","type":"uint256"},
+				{"name":"newwallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "WithdrawFees",
+			"inputs": [
+				{"name":"destination","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TransferAdmin",
+			"inputs": [
+				{"name":"newadmin","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "SetBasicFee",
+			"inputs": [
+				{"name":"newfee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "SetMintFee",
+			"inputs": [
+				{"name":"newfee","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "SetImageUrl",
+			"inputs": [
+				{"name":"newurl","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "BurnTotalSupply",
+			"inputs": [
+				{"name":"newsupply","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getWaifu",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"m","type":"tuple"}
+			]
+		},
+		{
+			"name": "getOffer",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"isForSale","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"seller","type":"uint256"},{"name":"minValue","type":"uint128"}],"name":"o","type":"tuple"}
+			]
+		},
+		{
+			"name": "getBid",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"hasBid","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"bidder","type":"uint256"},{"name":"value","type":"uint128"}],"name":"b","type":"tuple"}
+			]
+		},
+		{
+			"name": "getWaifuAllData",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"m","type":"tuple"},
+				{"components":[{"name":"isForSale","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"seller","type":"uint256"},{"name":"minValue","type":"uint128"}],"name":"o","type":"tuple"},
+				{"components":[{"name":"hasBid","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"bidder","type":"uint256"},{"name":"value","type":"uint128"}],"name":"b","type":"tuple"}
+			]
+		},
+		{
+			"name": "getPendingWithdrawal",
+			"inputs": [
+				{"name":"owner","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"amount","type":"uint128"}
+			]
+		},
+		{
+			"name": "getBalance",
+			"inputs": [
+				{"name":"owner","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"amount","type":"uint128"}
+			]
+		},
+		{
+			"name": "getLatestWaifus",
+			"inputs": [
+				{"name":"N","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"value0","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "getWaifusInRange",
+			"inputs": [
+				{"name":"start","type":"uint256"},
+				{"name":"end","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"value0","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "getWaifusByOwner",
+			"inputs": [
+				{"name":"owner","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"value0","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "getActiveOffers",
+			"inputs": [
+				{"name":"N","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"isForSale","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"seller","type":"uint256"},{"name":"minValue","type":"uint128"}],"name":"value0","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "getActiveBids",
+			"inputs": [
+				{"name":"N","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"hasBid","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"bidder","type":"uint256"},{"name":"value","type":"uint128"}],"name":"value0","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "getUserWallet",
+			"inputs": [
+				{"name":"userKey","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"sc","type":"address"}
+			]
+		},
+		{
+			"name": "setName",
+			"inputs": [
+				{"name":"owner","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"newname","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transferWaifu",
+			"inputs": [
+				{"name":"from","type":"uint256"},
+				{"name":"to","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "waifuNoLongerForSale",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "offerWaifuForSale",
+			"inputs": [
+				{"name":"from","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"minSalePrice","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "buyWaifu",
+			"inputs": [
+				{"name":"userKey","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"destination","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "enterBidForWaifu",
+			"inputs": [
+				{"name":"userKey","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "acceptBidForWaifu",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"minPrice","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawBidForWaifu",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "name",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"name","type":"string"}
+			]
+		},
+		{
+			"name": "symbol",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"symbol","type":"string"}
+			]
+		},
+		{
+			"name": "totalSupply",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"totalSupply","type":"uint256"}
+			]
+		},
+		{
+			"name": "decimals",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"decimals","type":"uint8"}
+			]
+		},
+		{
+			"name": "nextWaifuIndexToAssign",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"nextWaifuIndexToAssign","type":"uint256"}
+			]
+		},
+		{
+			"name": "waifusRemainingToAssign",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"waifusRemainingToAssign","type":"uint256"}
+			]
+		},
+		{
+			"name": "mintFee",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"mintFee","type":"uint128"}
+			]
+		},
+		{
+			"name": "imageUrl",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"imageUrl","type":"string"}
+			]
+		},
+		{
+			"name": "basicFee",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"basicFee","type":"uint128"}
+			]
+		},
+		{
+			"name": "balanceOf",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"balanceOf","type":"map(uint256,uint128)"}
+			]
+		},
+		{
+			"name": "OwnerOf",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"OwnerOf","type":"map(uint256,uint256[])"}
+			]
+		},
+		{
+			"name": "keysToWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"keysToWallet","type":"map(uint256,address)"}
+			]
+		},
+		{
+			"name": "waifusOfferedForSale",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"isForSale","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"seller","type":"uint256"},{"name":"minValue","type":"uint128"}],"name":"waifusOfferedForSale","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "waifusMeta",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"waifusMeta","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "waifuBids",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"hasBid","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"bidder","type":"uint256"},{"name":"value","type":"uint128"}],"name":"waifuBids","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "pendingWithdrawals",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"pendingWithdrawals","type":"map(uint256,uint128)"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "eTransfer",
+			"inputs": [
+				{"name":"from","type":"uint256"},
+				{"name":"to","type":"uint256"},
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "eWaifuNoLongerForSale",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "eWaifuOffered",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"minSalePrice","type":"uint128"},
+				{"name":"to","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "eWaifuBought",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"price","type":"uint128"},
+				{"name":"seller","type":"uint256"},
+				{"name":"byuer","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "eWaifuBidEntered",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"price","type":"uint128"},
+				{"name":"bidder","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "eWaifuBidWithdrawn",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"price","type":"uint128"},
+				{"name":"bidder","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "eWaifuNameChanged",
+			"inputs": [
+				{"name":"waifuIndex","type":"uint256"},
+				{"name":"name","type":"string"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"name","type":"string"},
+		{"name":"symbol","type":"string"},
+		{"name":"totalSupply","type":"uint256"},
+		{"name":"decimals","type":"uint8"},
+		{"name":"admin","type":"uint256"},
+		{"name":"nextWaifuIndexToAssign","type":"uint256"},
+		{"name":"waifusRemainingToAssign","type":"uint256"},
+		{"name":"mintFee","type":"uint128"},
+		{"name":"imageUrl","type":"string"},
+		{"name":"basicFee","type":"uint128"},
+		{"name":"earned","type":"uint128"},
+		{"name":"balanceOf","type":"map(uint256,uint128)"},
+		{"name":"OwnerOf","type":"map(uint256,uint256[])"},
+		{"name":"keysToWallet","type":"map(uint256,address)"},
+		{"components":[{"name":"isForSale","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"seller","type":"uint256"},{"name":"minValue","type":"uint128"}],"name":"waifusOfferedForSale","type":"map(uint256,tuple)"},
+		{"components":[{"name":"owner","type":"uint256"},{"name":"name","type":"string"},{"name":"mintTimestamp","type":"uint64"},{"name":"isForSale","type":"bool"},{"name":"hasBid","type":"bool"}],"name":"waifusMeta","type":"map(uint256,tuple)"},
+		{"components":[{"name":"hasBid","type":"bool"},{"name":"waifuIndex","type":"uint256"},{"name":"bidder","type":"uint256"},{"name":"value","type":"uint128"}],"name":"waifuBids","type":"map(uint256,tuple)"},
+		{"name":"pendingWithdrawals","type":"map(uint256,uint128)"}
+	]
+}

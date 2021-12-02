@@ -1,0 +1,258 @@
+[
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory2",
+        "Hair": "hair2",
+        "tokenId": 0
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory2",
+        "Hair": "hair4",
+        "tokenId": 1
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory2",
+        "Hair": "hair1",
+        "tokenId": 2
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory3",
+        "Hair": "hair4",
+        "tokenId": 3
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory4",
+        "Hair": "hair4",
+        "tokenId": 4
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory4",
+        "Hair": "hair1",
+        "tokenId": 5
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory3",
+        "Hair": "hair1",
+        "tokenId": 6
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face4",
+        "Accessory": "accessory4",
+        "Hair": "hair4",
+        "tokenId": 7
+    },
+    {
+        "Background": "Yellow",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory4",
+        "Hair": "hair2",
+        "tokenId": 8
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face3",
+        "Accessory": "accessory4",
+        "Hair": "hair1",
+        "tokenId": 9
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face4",
+        "Accessory": "accessory2",
+        "Hair": "hair1",
+        "tokenId": 10
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory3",
+        "Hair": "hair4",
+        "tokenId": 11
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory4",
+        "Hair": "hair3",
+        "tokenId": 12
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory4",
+        "Hair": "hair2",
+        "tokenId": 13
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory1",
+        "Hair": "hair4",
+        "tokenId": 14
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face3",
+        "Accessory": "accessory4",
+        "Hair": "hair4",
+        "tokenId": 15
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory3",
+        "Hair": "hair2",
+        "tokenId": 16
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory2",
+        "Hair": "hair4",
+        "tokenId": 17
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face3",
+        "Accessory": "accessory4",
+        "Hair": "hair3",
+        "tokenId": 18
+    },
+    {
+        "Background": "Yellow",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory1",
+        "Hair": "hair4",
+        "tokenId": 19
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face3",
+        "Accessory": "accessory2",
+        "Hair": "hair4",
+        "tokenId": 20
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory3",
+        "Hair": "hair1",
+        "tokenId": 21
+    },
+    {
+        "Background": "Yellow",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory3",
+        "Hair": "hair1",
+        "tokenId": 22
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory4",
+        "Hair": "hair1",
+        "tokenId": 23
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face2",
+        "Accessory": "accessory2",
+        "Hair": "hair2",
+        "tokenId": 24
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory1",
+        "Hair": "hair2",
+        "tokenId": 25
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory3",
+        "Hair": "hair4",
+        "tokenId": 26
+    },
+    {
+        "Background": "Blue",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory3",
+        "Hair": "hair2",
+        "tokenId": 27
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory2",
+        "Hair": "hair1",
+        "tokenId": 28
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face4",
+        "Accessory": "accessory2",
+        "Hair": "hair4",
+        "tokenId": 29
+    },
+    {
+        "Background": "Green",
+        "Body": "Duck",
+        "Face": "face4",
+        "Accessory": "accessory3",
+        "Hair": "hair3",
+        "tokenId": 30
+    },
+    {
+        "Background": "White",
+        "Body": "Duck",
+        "Face": "face1",
+        "Accessory": "accessory2",
+        "Hair": "hair4",
+        "tokenId": 31
+    }
+]

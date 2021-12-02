@@ -1,0 +1,28 @@
+{
+    "image": "https://gateway.pinata.cloud/ipfs/QmTsYEPsnCbAG724wURBMnSDvRayhTs5ZDKnqfPuMEuvva",
+    "tokenId": 26,
+    "name": "EverDucks 26",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "White"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Duck"
+        },
+        {
+            "trait_type": "Face",
+            "value": "face1"
+        },
+        {
+            "trait_type": "Accessory",
+            "value": "accessory3"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "hair4"
+        }
+    ],
+    "metadata": "https://gateway.pinata.cloud/ipfs/QmUujRtX1pDJSdg2Td4F2Cb9knw1L2NWfNkvJGxcC2WsyQ"
+}

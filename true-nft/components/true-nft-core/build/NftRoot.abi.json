@@ -1,0 +1,150 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"codeIndex","type":"cell"},
+				{"name":"codeData","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintNft",
+			"inputs": [
+				{"name":"image","type":"string"},
+				{"name":"metadata","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintNftToUser",
+			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"image","type":"string"},
+				{"name":"metadata","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTotalMinted",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "transferAdmin",
+			"inputs": [
+				{"name":"_newAdminPubkey","type":"uint256"},
+				{"name":"_newAdminAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendTransaction",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"},
+				{"name":"flags","type":"uint8"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deployBasis",
+			"inputs": [
+				{"name":"codeIndexBasis","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "destructBasis",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "resolveCodeHashIndex",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"addrOwner","type":"address"}
+			],
+			"outputs": [
+				{"name":"codeHashIndex","type":"uint256"}
+			]
+		},
+		{
+			"name": "resolveIndex",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"addrData","type":"address"},
+				{"name":"addrOwner","type":"address"}
+			],
+			"outputs": [
+				{"name":"addrIndex","type":"address"}
+			]
+		},
+		{
+			"name": "resolveCodeHashData",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"codeHashData","type":"uint256"}
+			]
+		},
+		{
+			"name": "resolveData",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"addrData","type":"address"}
+			]
+		},
+		{
+			"name": "adminPubkey",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"adminPubkey","type":"uint256"}
+			]
+		},
+		{
+			"name": "totalSupply",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"totalSupply","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_codeData","type":"cell"},
+		{"name":"_codeIndex","type":"cell"},
+		{"name":"_totalMinted","type":"uint256"},
+		{"name":"_addrBasis","type":"address"},
+		{"name":"adminPubkey","type":"uint256"},
+		{"name":"adminAddress","type":"address"},
+		{"name":"totalSupply","type":"uint256"}
+	]
+}
