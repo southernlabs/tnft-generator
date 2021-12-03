@@ -9,6 +9,8 @@ import pkgIndex from "../ton-packages/Index.package";
 import pkgMinter from "../ton-packages/Minter.package";
 import { expect } from "chai";
 
+import {get_tokens_from_giver} from './giver.module';
+
 describe("Deploy", () => {
   let client: TonClient;
   let smcSafeMultisigWallet: TonContract;
@@ -38,28 +40,7 @@ describe("Deploy", () => {
     });
 
     let msigBalance = await smcSafeMultisigWallet.getBalance()
-    expect(msigBalance, "Wallet must have balance to deploy!").not.to.be.equal(0);
-	
-	// Semi-manual msig deploy, for test network
-	if(!process.env.MULTISIG_ADDRESS){
-		await smcSafeMultisigWallet.calcAddress();
-		
-		console.log(`Msig address: ${smcSafeMultisigWallet.address}`);
-		//console.log(`Msig keys: `,msigKeys);
-		
-		msigBalance = await smcSafeMultisigWallet.getBalance()
-		console.log(`Msig balance: ${msigBalance}`);
-		console.log(`Topup msig balance via tondev:  tondev ct -a ${smcSafeMultisigWallet.address} -v 1000000000000000`);
-		//expect(msigBalance).not.to.be.equal(0);
-		/*await smcSafeMultisigWallet.deploy({
-		  input: {
-			owners: ["0x2b036b4370ce5e893780a8418c4b7e038c5a1ad16ce9c7148696c3b03b353a4c"],
-			reqConfirms: 1,
-		  },
-		});*/
-		
-	}
-	
+    expect(msigBalance, "Wallet must have balance to deploy!").to.be.ok;
     
   });
 
@@ -180,135 +161,28 @@ describe("Deploy", () => {
     
   });
 
-  /*
-  it("Mint Nft from Minter", async () => {
-    await callThroughMultisig({
-      client,
-      smcSafeMultisigWallet,
-      abi: pkgMinter.abi,
-      functionName: "mintNft",
-      input: {},
-      dest: smcMinter.address,
-      value: 2_500_000_000,
-    });
-
-    smcData = await getAddrData(
-      client,
-      smcNftRoot,
-      smcSafeMultisigWallet
-    );
-    console.log(`Data address: `, smcData.address);
-
-    let metadata = await smcData.run({
-      functionName: "getMeta"
-    });
-	  console.log("Metadata", metadata.value);
-
-    let res = await smcData.run({
-      functionName: "getInfo"
-    });
-    myDeployedNft++;
-	
-	  console.log("res", res.value);
-    
-    expect(smcNftRoot.address).to.be.equal(res.value.addrRoot);
-    expect(process.env.MULTISIG_ADDRESS).to.be.equal(res.value.addrOwner);
-  });
-  */
-});
-
-const getAddrData = async (
-  client: TonClient,
-  smcNftRoot: TonContract,
-  smcSafeMultisigWallet: TonContract
-): Promise<TonContract> => {
-  let smcData: TonContract;
-  const { codeHashData } = (
-    await smcNftRoot.run({
-      functionName: "resolveCodeHashData",
-      input: {},
-    })
-  ).value;
-  
-  const Datas = (
-    await client.net.query_collection({
-      collection: "accounts",
-      filter: {
-        code_hash: { eq: codeHashData.slice(2) },
+  it("Save the deploy data", async () => {
+    const result = {
+      Root: {
+        address: smcNftRoot.address,
+        keys: smcNftRoot.keys
       },
-      result: "id",
-    })
-  ).result;
-
-  const promises = Datas.map((el) => {
-    const _smcData = new TonContract({
-      client,
-      name: "",
-      tonPackage: pkgData,
-      address: el.id,
-    });
-    return _smcData.run({
-      functionName: "getOwner",
-    });
-  });
-
-  const results = await Promise.all(promises);
-
-  results.forEach((el: any, i) => {
-    if (el.value.addrOwner === smcSafeMultisigWallet.address) {
-      smcData = new TonContract({
-        client,
-        name: "Data",
-        tonPackage: pkgData,
-        address: Datas[i].id,
-      });
+      Minter:{
+        address: smcMinter.address,
+        keys: smcMinter.keys
+      },
+      Msig:{
+        address:smcSafeMultisigWallet.address,
+        keys:smcSafeMultisigWallet.keys
+      },
+      network: "127.0.0.1"
     }
+
+    var json = JSON.stringify(result);
+    var fs = require('fs');
+    fs.writeFileSync('../../test-deploy-result.json', json);
+
+    console.log("Test data saved to test-deploy-result.json please use this file to configure tnft-explorer");
   });
-
-  return smcData;
-};
-
-const getMyNfts = async (
-  client: TonClient,
-  smcData: TonContract,
-  rootAddr: string
-): Promise<any> => {
-  const { codeHashIndex } = (
-    await smcData.run({
-      functionName: "resolveCodeHashIndex",
-      input: {
-        addrRoot: rootAddr,
-        addrOwner: process.env.MULTISIG_ADDRESS
-      },
-    })
-  ).value;
-
-  let nfts = [];
-  let counter = 0;
-
-  while (nfts.length === 0 && counter <= 500) {
-    const qwe = await client.net.query_collection({
-      collection: "accounts",
-      filter: {
-        code_hash: { eq: codeHashIndex.slice(2) },
-      },
-      result: "id",
-    });
-    counter++;
-    nfts = qwe.result;
-  }
-
-  const promises = nfts.map((el) => {
-    const _smcNft = new TonContract({
-      client,
-      name: "",
-      tonPackage: pkgIndex,
-      address: el.id,
-    });
-    return _smcNft.run({
-      functionName: "getInfo",
-    });
-  });
-
-  return await Promise.all(promises);
-};
+ 
+});

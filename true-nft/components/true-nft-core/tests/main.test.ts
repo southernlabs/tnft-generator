@@ -9,51 +9,70 @@ import pkgIndex from "../ton-packages/Index.package";
 import pkgMinter from "../ton-packages/Minter.package";
 import { expect } from "chai";
 
+import {get_tokens_from_giver} from './giver.module';
+
 describe("main test", () => {
   let client: TonClient;
   let smcSafeMultisigWallet: TonContract;
   let smcNftRoot: TonContract;
   let smcMinter: TonContract;
-  let smcNftRoot2: TonContract;
-  let smcNft: TonContract;
   let smcData: TonContract;
-  let myDeployedNft = 0;
-  let myNftRootAll = 0;
-  let zeroAddress = '0:0000000000000000000000000000000000000000000000000000000000000000';
   let fakeAddress = "0:0000000000000000000000000000000000000000000000000000000000001111";
   let keys: KeyPair;
+  let msigKeys: KeyPair;
+  let myDeployedNft: number;
 
   before(async () => {
     client = createClient();
-	//let msigKeys = await client.crypto.generate_random_sign_keys();
+
+    if(process.env.MULTISIG_ADDRESS){
+    //let msigKeys = await client.crypto.generate_random_sign_keys();
+      smcSafeMultisigWallet = new TonContract({
+        client,
+        name: "SafeMultisigWallet",
+        tonPackage: pkgSafeMultisigWallet,
+        address: process.env.MULTISIG_ADDRESS,
+        keys: {
+          public: process.env.MULTISIG_PUBKEY,
+          secret: process.env.MULTISIG_SECRET,
+        },
+      });
+    }
+	
+	// Semi-manual msig deploy, for test network
+	if(!process.env.MULTISIG_ADDRESS){
+    msigKeys = await client.crypto.generate_random_sign_keys();
     smcSafeMultisigWallet = new TonContract({
       client,
       name: "SafeMultisigWallet",
       tonPackage: pkgSafeMultisigWallet,
-      address: process.env.MULTISIG_ADDRESS,
-      keys: {
-        public: process.env.MULTISIG_PUBKEY,
-        secret: process.env.MULTISIG_SECRET,
-      },
+      keys: msigKeys,
     });
-	
-	// Semi-manual msig deploy, for test network
-	if(!process.env.MULTISIG_ADDRESS){
 		await smcSafeMultisigWallet.calcAddress();
-		
+
+		console.log(`You are running without specified msig address and keys. Generating msig automatically...`);
+
 		console.log(`Msig address: ${smcSafeMultisigWallet.address}`);
-		//console.log(`Msig keys: `,msigKeys);
+		console.log(`Msig keys: `,msigKeys);
 		
-		let msigBalance = await smcSafeMultisigWallet.getBalance()
-		console.log(`Msig balance: ${msigBalance}`);
-		console.log(`Topup msig balance via tondev:  tondev ct -a ${smcSafeMultisigWallet.address} -v 1000000000000000`);
+    // Here freezee to wait for balance
+    let msigBalance = await smcSafeMultisigWallet.getBalance()
+
+    get_tokens_from_giver(client, smcSafeMultisigWallet.address, 1_000_000_000_000_000)
+
+    console.log(`Msig balance: ${msigBalance}`);
+    console.log(` ⚠️ Topup msig balance via tondev:  tondev ct -a ${smcSafeMultisigWallet.address} -v 1000000000000000`);
+
+    while(!await smcSafeMultisigWallet.getBalance()){}
 		//expect(msigBalance).not.to.be.equal(0);
-		/*await smcSafeMultisigWallet.deploy({
+
+    //deploy new msig
+		await smcSafeMultisigWallet.deploy({
 		  input: {
-			owners: ["0x2b036b4370ce5e893780a8418c4b7e038c5a1ad16ce9c7148696c3b03b353a4c"],
-			reqConfirms: 1,
+        owners: ["0x"+msigKeys.public],
+        reqConfirms: 1,
 		  },
-		});*/
+		});
 		
 	}
 	
@@ -130,12 +149,14 @@ describe("main test", () => {
     await smcMinter.deploy({
       input: {
         addrRoot: smcNftRoot.address,
-        images: {0: "https://gateway.pinata.cloud/ipfs/QmYgvLmBebLUXqQhRQ93ux9CigNyaDA4ciZzjM7NsDAxkJ",
-         1: "https://gateway.pinata.cloud/ipfs/QmTSE93PV21Xx4NCB35heV2fKG9ipQQd9vML7gdta9E9Az",
-         2: "https://gateway.pinata.cloud/ipfs/QmTGH8kY3tt6mkh6rL3oJurgtC6n6f89yrK5D5zbcvZpXL"},
-        metadatas: {0: "https://gateway.pinata.cloud/ipfs/QmYgvLmBebLUXqQhRQ93ux9CigNyaDA4ciZzjM7NsDAxkJ",
-        1: "https://gateway.pinata.cloud/ipfs/QmTSE93PV21Xx4NCB35heV2fKG9ipQQd9vML7gdta9E9Az",
-        2: "https://gateway.pinata.cloud/ipfs/QmTGH8kY3tt6mkh6rL3oJurgtC6n6f89yrK5D5zbcvZpXL"},
+        images: {0: "https://gateway.pinata.cloud/ipfs/QmRSTurySshBxQPxpB2M4TQMwAL3YzetstKbMeJkTGBfvS",
+         1: "https://gateway.pinata.cloud/ipfs/QmQFVa7YJ1NEgXdzazqHaBAQBZYi7anUpEixfZNcjnbkhK",
+         2: "https://gateway.pinata.cloud/ipfs/QmfSgYbrGyCDK2k4sHE1mWakckaahzn7iKuzsCojBSfJC8",
+         3: "https://gateway.pinata.cloud/ipfs/QmNTb2gFHRGFoukK62kygAws9Uta8FsdwJ2ShiQBLiLWTm"},
+        metadatas: {0: "https://gateway.pinata.cloud/ipfs/QmRGNnwk2LKCLxTpjUYXHRSNCYvd53abLfjma2LwyY3gYt",
+         1: "https://gateway.pinata.cloud/ipfs/QmRm1273Y9JdaLBVGCg56WKu62zVm1Th9Ks8fe6iCaTGyC",
+         2: "https://gateway.pinata.cloud/ipfs/QmV4NanazYAAqzDctkkwKHx2NbdbVAaqS2jom18FcQWsz1",
+         3: "https://gateway.pinata.cloud/ipfs/QmV3GNnyxBFNPBANB5UpReFMhdh1T471PVtBbj8K4ZDQn1"},
       },
     });
 
@@ -195,7 +216,7 @@ describe("main test", () => {
 	  console.log("res", res.value);
     
     expect(smcNftRoot.address).to.be.equal(res.value.addrRoot);
-    expect(process.env.MULTISIG_ADDRESS).to.be.equal(res.value.addrOwner);
+    expect(smcSafeMultisigWallet.address).to.be.equal(res.value.addrOwner);
   });
 
   it("transfer ownership", async () => {
@@ -219,9 +240,33 @@ describe("main test", () => {
   });
 
   it("get my nft inside root after transfer", async () => {
-    const results = await getMyNfts(client, smcData, smcNftRoot.address);
+    const results = await getMyNfts(client, smcData, smcNftRoot.address, smcSafeMultisigWallet);
     console.log(results);
     expect(0).to.be.equal(results.length);
+  });
+
+  it("Save the test data", async () => {
+    const result = {
+      Root: {
+        address: smcNftRoot.address,
+        keys: smcNftRoot.keys
+      },
+      Minter:{
+        address: smcMinter.address,
+        keys: smcMinter.keys
+      },
+      Msig:{
+        address:smcSafeMultisigWallet.address,
+        keys:smcSafeMultisigWallet.keys
+      },
+      network: "127.0.0.1"
+    }
+
+    var json = JSON.stringify(result);
+    var fs = require('fs');
+    fs.writeFileSync('../../test-deploy-result.json', json);
+
+    console.log("Test data saved to test-deploy-result.json please use this file to configure tnft-explorer");
   });
   
 });
@@ -280,14 +325,15 @@ const getAddrData = async (
 const getMyNfts = async (
   client: TonClient,
   smcData: TonContract,
-  rootAddr: string
+  rootAddr: string,
+  msig: TonContract
 ): Promise<any> => {
   const { codeHashIndex } = (
     await smcData.run({
       functionName: "resolveCodeHashIndex",
       input: {
         addrRoot: rootAddr,
-        addrOwner: process.env.MULTISIG_ADDRESS
+        addrOwner: msig.address
       },
     })
   ).value;

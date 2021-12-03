@@ -4,9 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "mocha --exit -r ts-node/register -r dotenv/config -t 300000 'tests/main.test.ts'",
-    "test-payload": "mocha --exit -r ts-node/register -r dotenv/config -t 300000 'tests/payload.test.ts'",
     "deploy": "mocha --exit -r ts-node/register -r dotenv/config -t 300000 'tests/deploy.test.ts'",
-	  "testts": "ts-mocha -p ../../tsconfig.json -r ts-node/register -r dotenv/config -t 300000 'tests/**/*.test.ts'",
     "compile": "node ./compile.js",
     "test:compile": "npm run compile && npm run test"
   },

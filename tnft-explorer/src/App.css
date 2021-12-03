@@ -1,0 +1,70 @@
+.App {
+  padding-top: 16px;
+  text-align: center;
+  
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.NFTs {
+  margin-top: 34px;
+  display: grid;
+  
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-auto-rows: auto;
+  grid-gap: 16px;
+  
+}
+
+.grid-holder{
+  display: flex;
+  justify-content: center;
+}
+.NFT-item {
+  border: 2px solid #e7e7e7;
+  padding: .5rem;
+  border-radius: 8px;
+  
+  text-overflow: ellipsis;
+  display: block;
+  word-wrap:break-word;
+
+}
+.card-text{
+  width: 100%;
+  word-wrap:break-word;
+  text-overflow: ellipsis;
+}

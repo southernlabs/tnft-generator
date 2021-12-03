@@ -2,7 +2,7 @@
 
 ## 🔮 How it works?
 
-This project helps to create genertive NFT collection in Everscale Blockchain.
+This project helps to create genertive NFT collection on Everscale Blockchain.
 
 In this project we have example images set for EverDucks collection. This images were created in Aseprite (source included). Each layer is also a trait.
 NFT image is a mix of different layers. Each layer shuffle and them puts together with image generator. They are highly customizable, you can easily add your own layers.
@@ -19,9 +19,9 @@ This toolset support several methods and solutions of storing images and matadat
 
 | Approach | 🖼️ Images | 📋 Metadata |
 | --- | --- | --- | 
-| Persistent | 🌐 IPFS  | 🌐 IPFS |
-| Opensea-like | 🌐 IPFS | 📄 API |
-| Simple | 📄 API | 📄 API |
+| [Persistent](/docs/persistent-approach-guide.md) | 🌐 IPFS  | 🌐 IPFS |
+| [Opensea-like](/docs/opensea-approach-guide.md) | 🌐 IPFS | 📄 API |
+| [Simple](/docs/simple-approach-guide.md) | 📄 API | 📄 API |
 | tNFT simplified | ⛓️ Onchain | 📄 API |
 | tNFT full | ⛓️ Onchain | ⛓️ Onchain |
 
@@ -59,9 +59,9 @@ pip install -r requirements.txt
 
 - Install all dependencies
 - Prepare your trait layers and put them in `image-sources` directory
-- Modigy `generator.ipynb` to add your traits and new layers. Also set number of images to generate.
+- Modify `generator.ipynb` to add your traits and new layers. Also set number of images to generate.
 - Run `generator.ipynb` to generate traits and NFT images. Images will be stored in `images-output` directory and traits in `metadata`
-- Upload images. There 3 ways to store images: IPFS, onchain, on server
+- Upload images. There 3 ways to store them: on IPFS, onchain, on server
 - Setup traits API or upload metadata to IPFS
 - Deploy collection to blockchain
 
@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 We are using pinata.cloud for storing images
 
-- Create account on pinata.cloud (Free plan for 1 GB storage)
+- Create account on [pinata.cloud](https://pinata.cloud) (Free plan for 1 GB storage)
 - Get keys https://app.pinata.cloud/keys (click on admin key toggle), save them to `./uploaders/ipfs-image-uploader.ipynb`
 - Run IPFS uploader to upload all of images `./uploaders/ipfs-image-uploader.ipynb`
 
@@ -107,12 +107,12 @@ You can test your collection on local machine. First make sure you have installe
 
 - Run `tondev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
-- Run `yarn add`
+- Run `yarn install`
 - Run `lerna bootstrap`
 - Test with `yarn run test-minter-ipfs`
 
 
-## Deploying
+## 🚀 Deploying
 
 This example shows up how to deploy collection to Devnet.
 
