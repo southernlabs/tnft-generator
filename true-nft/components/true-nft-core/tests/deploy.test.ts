@@ -21,27 +21,62 @@ describe("Deploy", () => {
   let myDeployedNft = 0;
   let fakeAddress = "0:0000000000000000000000000000000000000000000000000000000000001111";
   let keys: KeyPair;
+  let msigKeys: KeyPair;
   let metadatas_json: Array<Object>;
   let ipfs_images = {};
   let ipfs_metadatas = {};
 
   before(async () => {
-    client = createClient();
-	//let msigKeys = await client.crypto.generate_random_sign_keys();
+    if(process.env.MULTISIG_ADDRESS){
+      client = createClient();
+      smcSafeMultisigWallet = new TonContract({
+        client,
+        name: "SafeMultisigWallet",
+        tonPackage: pkgSafeMultisigWallet,
+        address: process.env.MULTISIG_ADDRESS,
+        keys: {
+          public: process.env.MULTISIG_PUBKEY,
+          secret: process.env.MULTISIG_SECRET,
+        },
+      });
+    }
+	
+	// Semi-manual msig deploy, for test network
+	if(!process.env.MULTISIG_ADDRESS){
+    client = createClient("http://localhost");
+    msigKeys = await client.crypto.generate_random_sign_keys();
     smcSafeMultisigWallet = new TonContract({
       client,
       name: "SafeMultisigWallet",
       tonPackage: pkgSafeMultisigWallet,
-      address: process.env.MULTISIG_ADDRESS,
-      keys: {
-        public: process.env.MULTISIG_PUBKEY,
-        secret: process.env.MULTISIG_SECRET,
-      },
+      keys: msigKeys,
     });
+		await smcSafeMultisigWallet.calcAddress();
 
+		console.log(`🟡 You are running without specified msig address and keys. Generating msig automatically...`);
+
+		console.log(`Msig address: ${smcSafeMultisigWallet.address}`);
+		console.log(`Msig keys: `,msigKeys);
+		
+    // Here freezee to wait for balance
     let msigBalance = await smcSafeMultisigWallet.getBalance()
-    expect(msigBalance, "Wallet must have balance to deploy!").to.be.ok;
-    
+
+    get_tokens_from_giver(client, smcSafeMultisigWallet.address, 1_000_000_000_000_000)
+
+    console.log(`Msig balance: ${msigBalance}`);
+    console.log(` ⚠️ Topup msig balance via tondev:  tondev ct -a ${smcSafeMultisigWallet.address} -v 1000000000000000`);
+
+    while(!await smcSafeMultisigWallet.getBalance()){}
+		//expect(msigBalance).not.to.be.equal(0);
+
+    //deploy new msig
+		await smcSafeMultisigWallet.deploy({
+		  input: {
+        owners: ["0x"+msigKeys.public],
+        reqConfirms: 1,
+		  },
+		});
+	}
   });
 
   it("Get metadata", async () => {
@@ -72,7 +107,7 @@ describe("Deploy", () => {
       functionName: "sendTransaction",
       input: {
         dest: smcNftRoot.address,
-        value: 5_000_000_000,
+        value: 15_000_000_000,
         bounce: false,
         flags: 2,
         payload: "",

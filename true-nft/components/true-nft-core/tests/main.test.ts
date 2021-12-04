@@ -23,10 +23,10 @@ describe("main test", () => {
   let myDeployedNft: number;
 
   before(async () => {
-    client = createClient();
+    
 
     if(process.env.MULTISIG_ADDRESS){
-    //let msigKeys = await client.crypto.generate_random_sign_keys();
+      client = createClient();
       smcSafeMultisigWallet = new TonContract({
         client,
         name: "SafeMultisigWallet",
@@ -41,6 +41,7 @@ describe("main test", () => {
 	
 	// Semi-manual msig deploy, for test network
 	if(!process.env.MULTISIG_ADDRESS){
+    client = createClient("http://localhost");
     msigKeys = await client.crypto.generate_random_sign_keys();
     smcSafeMultisigWallet = new TonContract({
       client,
@@ -50,7 +51,7 @@ describe("main test", () => {
     });
 		await smcSafeMultisigWallet.calcAddress();
 
-		console.log(`You are running without specified msig address and keys. Generating msig automatically...`);
+		console.log(`🟡 You are running without specified msig address and keys. Generating msig automatically...`);
 
 		console.log(`Msig address: ${smcSafeMultisigWallet.address}`);
 		console.log(`Msig keys: `,msigKeys);
@@ -73,9 +74,7 @@ describe("main test", () => {
         reqConfirms: 1,
 		  },
 		});
-		
 	}
-	
   });
 
   it("deploy first NftRoot", async () => {

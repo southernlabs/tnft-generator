@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test-minter-ipfs":"yarn --cwd ./components/true-nft-core/ run compile && yarn --cwd ./components/true-nft-core/ run test",
-    "deploy-minter-persistent-approach":"yarn --cwd ./components/true-nft-core/ run compile && yarn --cwd ./components/true-nft-core/ run deploy",
+    "deploy-minter": "yarn --cwd ./components/true-nft-core/ run deploy",
     "deploy": "yarn --cwd ./components/true-nft-core/ run deploy",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --exit -r ts-node/register -r dotenv/config -t 300000 'tests/**/*.test.ts'",
     "compile": "yarn run",

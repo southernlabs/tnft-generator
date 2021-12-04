@@ -20,21 +20,30 @@ We are using pinata.cloud for storing images
 
 ## 3. Preapare metadata API Server
 
-?? TODO ??
+- Run `api-server-metadata-generator.ipynb` from "uploaders" directory. This script will put metdata link like "http://localhost:8080/token/{id}" for every your token. Change this link to your server URL. Leave unchanged for deployment to local network.
+- Navigate to `api-server` directory: `cd api-server`
+- Install all dependencies `yarn install`
+- Make sure the first command updated "./data/all-metadatas.json" file. The server will try to get metadata from this file.
+- Run server `yarn run start:dev`
+- Open `http://localhost:8080/swagger`. It is ui for your API.
 
 ## 4. Deploy NFT collection to local network
 
 You can test your collection on local machine. First make sure you have installed local blockchain in docker.
 
-- Run `tondev se start`
+- Make sure local blockhcain is running. Run `tondev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
-- Run `yarn install`
+- Install all dependencies  `yarn install`
 - Run `lerna bootstrap`
-- Test with `yarn run test-minter-ipfs`
+- Test with `yarn run test-minter-ipfs`. This command will deploy sample collection to local network. 
+- Deploy your generated collection with `yarn run deploy-minter`.
+- If you have not created `.env` file in `./true-nft/components/true-nft-core`, then program will generate new MultiSig wallet. Its address and keys will be on screen. Better to create .env file and put there this address and keys to prevent generation of new wallet every time you run this command.
+- Keys for this collection will be stored in `test-deploy-result.json` file.
+- Copy this file into tnft-explorer for future step: `cp test-deploy-result.json ../tnft-explorer/src`
 
 ## 5. View your collection with `tnft-explorer`
 
-- Navigate to "tnft-explorer" directory: `cd tnft-explorer`
+- Navigate to "tnft-explorer" directory: `cd ../tnft-explorer`
 - Run `yarn install`
 - ???
 - Run `yarn start`

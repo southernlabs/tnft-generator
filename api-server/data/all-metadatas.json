@@ -1,0 +1,898 @@
+[
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmRSTurySshBxQPxpB2M4TQMwAL3YzetstKbMeJkTGBfvS",
+        "tokenId": 0,
+        "name": "EverDucks 0",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/0"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmQFVa7YJ1NEgXdzazqHaBAQBZYi7anUpEixfZNcjnbkhK",
+        "tokenId": 1,
+        "name": "EverDucks 1",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/1"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmavcFsatD2ieRKrStQUTydVbrYb5csCWankwhEqLSiK1J",
+        "tokenId": 10,
+        "name": "EverDucks 10",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face4"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/10"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmbAVr3JfoaNvWRLkv8ERrVEWTv7wDmi9R4zTf67Lmj1d7",
+        "tokenId": 11,
+        "name": "EverDucks 11",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/11"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYgvLmBebLUXqQhRQ93ux9CigNyaDA4ciZzjM7NsDAxkJ",
+        "tokenId": 12,
+        "name": "EverDucks 12",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair3"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/12"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmRTRNDRumtGLFmKw7MQv9nDvN8KxKxWkBicQEVkrMkp27",
+        "tokenId": 13,
+        "name": "EverDucks 13",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/13"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmTSE93PV21Xx4NCB35heV2fKG9ipQQd9vML7gdta9E9Az",
+        "tokenId": 14,
+        "name": "EverDucks 14",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory1"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/14"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmePBzbYdngw6hebvXuWUuKhRxYRH4c9fZdSwdju1rA7gs",
+        "tokenId": 15,
+        "name": "EverDucks 15",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face3"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/15"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmWzrnr2kYyCddsVqoftmBnmWZ1hbY1eBzoeJcN9ApHqTh",
+        "tokenId": 16,
+        "name": "EverDucks 16",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/16"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmSAYVeHoCgzKBEhRKgvV4axPta8GJ4UFNfm6SWJBgmGEj",
+        "tokenId": 17,
+        "name": "EverDucks 17",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/17"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmWRYrnzaxxE91GbUsSiia2DSoFoyJR64EG5ymeFT5DXYT",
+        "tokenId": 18,
+        "name": "EverDucks 18",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face3"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair3"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/18"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmWN5XhWX6v5BnbXTomYTQiqPFZpwm9C4tBohm9zrFevu9",
+        "tokenId": 19,
+        "name": "EverDucks 19",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory1"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/19"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmfSgYbrGyCDK2k4sHE1mWakckaahzn7iKuzsCojBSfJC8",
+        "tokenId": 2,
+        "name": "EverDucks 2",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/2"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmRW5mMAznBZEXVDhxDpXcHj9SRYP1tZs62BgzHGy8SKhC",
+        "tokenId": 20,
+        "name": "EverDucks 20",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face3"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/20"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmatxyVzT6NEipqDTmttDaiHGL5GpucCCM4xgHQv4qjNiz",
+        "tokenId": 21,
+        "name": "EverDucks 21",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/21"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYfLmzseJmx5RANdqMQxY5Wm1qo6iU74S6yCd5p6qkAis",
+        "tokenId": 22,
+        "name": "EverDucks 22",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/22"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmadCPXXWrQJzEZcmbQFQSCyUqY6DqMg77NpWfzpCCsrmE",
+        "tokenId": 23,
+        "name": "EverDucks 23",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/23"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmahEVrK3mZx6y6GvNTaZyDonA88ubwQ3GTseAudSY15dc",
+        "tokenId": 24,
+        "name": "EverDucks 24",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/24"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmXFeRXUenTAkV9mRdFfx8ERmx5fHMWiCo478rAfSg5pgK",
+        "tokenId": 25,
+        "name": "EverDucks 25",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory1"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/25"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmTsYEPsnCbAG724wURBMnSDvRayhTs5ZDKnqfPuMEuvva",
+        "tokenId": 26,
+        "name": "EverDucks 26",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/26"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmY5pP8rXHZR7p5QsoBpxqHkcD33w4hac8CSDDPVFviZec",
+        "tokenId": 27,
+        "name": "EverDucks 27",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/27"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/Qmf6geiidGzhMCw9uDWLzW4CbsXYbdPb3PLVnKaukqkTkZ",
+        "tokenId": 28,
+        "name": "EverDucks 28",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/28"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmeF79nKhRMnWPp2Hus7GKYCSVFNRzsZmGyLG1smBxZ9ov",
+        "tokenId": 29,
+        "name": "EverDucks 29",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face4"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/29"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmNTb2gFHRGFoukK62kygAws9Uta8FsdwJ2ShiQBLiLWTm",
+        "tokenId": 3,
+        "name": "EverDucks 3",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/3"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/Qme1PuCAH4ux6wNiKEoPKY8EFRwbk3TomPLWYq5vmSH9nL",
+        "tokenId": 30,
+        "name": "EverDucks 30",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Green"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face4"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair3"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/30"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmSBmr7pS42p5r7qz5Y1fwTHJrVwnrtZ52SyJRPyvESSjC",
+        "tokenId": 31,
+        "name": "EverDucks 31",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory2"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/31"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmQNHFFrZsYR7NiHZNaUEqoPUB9vDdEsJKCq7A7qyLj1Q3",
+        "tokenId": 4,
+        "name": "EverDucks 4",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/4"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmecGhocg4Z7MwSkeffdPqMNiSi5j4WFmqvLoDDdVeXcM2",
+        "tokenId": 5,
+        "name": "EverDucks 5",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Blue"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/5"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmSQp23i8y4bmw3S7jMncLhqNLRFPvw2WcSTg5fofMeMX6",
+        "tokenId": 6,
+        "name": "EverDucks 6",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face1"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory3"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/6"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/Qmdve2Z4Y5oxme3Aw9waUbaENYQcryHVupsYWmrMSD1wtM",
+        "tokenId": 7,
+        "name": "EverDucks 7",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face4"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair4"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/7"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmZWmXZCCyKDDYNUeEccbpuqWgS8Wv8P4yvTVHoF8UyDDd",
+        "tokenId": 8,
+        "name": "EverDucks 8",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "Yellow"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face2"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair2"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/8"
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmWGfiLJWxyXjLJzzBZ47XfbxvxULf9K1r4pmteL2vfeFr",
+        "tokenId": 9,
+        "name": "EverDucks 9",
+        "attributes": [
+            {
+                "trait_type": "Background",
+                "value": "White"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Duck"
+            },
+            {
+                "trait_type": "Face",
+                "value": "face3"
+            },
+            {
+                "trait_type": "Accessory",
+                "value": "accessory4"
+            },
+            {
+                "trait_type": "Hair",
+                "value": "hair1"
+            }
+        ],
+        "metadata": "http://localhost:8080/token/9"
+    }
+]

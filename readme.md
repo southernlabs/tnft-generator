@@ -1,5 +1,7 @@
 # TrueNFT generative NFT
 
+![ducks](docs/images/EverDucks.jpg)
+
 ## 🔮 How it works?
 
 This project helps to create genertive NFT collection on Everscale Blockchain.
@@ -27,20 +29,6 @@ This toolset support several methods and solutions of storing images and matadat
 
 ✅🪢🟢🟡🟠🔮🔗⛓️🗒️📂📁
 
-Project structure
-
-```
-.
-├── api-server              # Node.js server to serve metadata for NFTs
-├── true-nft                # Solidity smartcontracts
-├── image-source            # Raw images of traits
-├── images-output           # Generated images of NFTs
-├── metadata                # Generated metadata of NFTs
-├── uploaders               # Scripts to upload images and metadata
-├── LICENSE
-├── generator.ipynb
-└── README.md
-```
 
 ## 🪜 Dependencies
 
@@ -51,7 +39,7 @@ Better to run this project in VS Code, but you can use this sources as you want.
 - Node.js
 - [Tondev](https://github.com/tonlabs/tondev)
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -67,6 +55,8 @@ pip install -r requirements.txt
 
 ## 🪐 Uploading images
 
+![Store data](docs/images/StoreData.jpg)
+
 ### IPFS
 
 We are using pinata.cloud for storing images
@@ -75,9 +65,11 @@ We are using pinata.cloud for storing images
 - Get keys https://app.pinata.cloud/keys (click on admin key toggle), save them to `./uploaders/ipfs-image-uploader.ipynb`
 - Run IPFS uploader to upload all of images `./uploaders/ipfs-image-uploader.ipynb`
 
+Proceed with [Persistent approach guide](/docs/persistent-approach-guide.md) or [Opensea-like approach guide](/docs/opensea-approach-guide.md) to learn how to setup collection with images on IPFS.
+
 ### Your own server
 
-You can easily store images on your own server or CDN. Just make sure they are accessible via direct link. As `https://cdn.some-nft.domain/1.png`
+You can easily store images on your own server or CDN. Just make sure they are accessible via direct link. As `http://localhost/token/1.png`. Proceed with [Simple approach guide](/docs/simple-approach-guide.md) to learn how to use api-server and serve images offchain.
 
 ### Onchain
 
@@ -91,19 +83,24 @@ Metadata is your NFT traits
 
 You can also upload metadata to IPFS. In this case you will not be able to edit it and add new traits to collection. But it is most simple way to store traits, cause you don't need API server for this.
 
-As with images upload to IPFS we will use pinata.cloud.
+As with images upload to IPFS we will use pinata.cloud. Set keys and run `./uploaders/ipfs-metadata-uploader.ipynb`
 
-Set keys and run `./uploaders/ipfs-metadata-uploader.ipynb`
+Proceed with [Persistent approach guide](/docs/persistent-approach-guide.md) to learn how to setup collection with traits and metadata on IPFS.
+
 
 ### API Server
 
 You need to setup API server to serve metadata for your NFTs. It is the same way as traits works on [Opensea](https://docs.opensea.io/docs/2-adding-metadata).
 
-You can easily write your own server or just serve static json files, remember we have generated them to `metadata` directory.
+You can easily write your own server or just serve static json files, remember we have generated them to `metadata` directory. In this project there is API Server out of a box. Check out `api-server` directory.
+
+Proceed with [Opensea-like approach guide](/docs/opensea-approach-guide.md) or [Simple approach guide](/docs/simple-approach-guide.md) to learn how to setup API server and serve metadata offchain.
 
 ## 🐋 Testing
 
-You can test your collection on local machine. First make sure you have installed local blockchain in docker.
+![image](docs/images/APIandWeb.jpg)
+
+You can test your collection on local machine. First make sure you have installed local blockchain in docker (tondev node se).
 
 - Run `tondev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
@@ -111,19 +108,31 @@ You can test your collection on local machine. First make sure you have installe
 - Run `lerna bootstrap`
 - Test with `yarn run test-minter-ipfs`
 
+Next you can use `tnft-explorer` to check out your collection in convinent web interface.
+
+Proceed with [Persistent approach guide](/docs/persistent-approach-guide.md) or [Opensea-like approach guide](/docs/opensea-approach-guide.md) or [Simple approach guide](/docs/simple-approach-guide.md) to learn more.
+
 
 ## 🚀 Deploying
 
 This example shows up how to deploy collection to Devnet.
 
-- Prepare your Multisig wallet (With balance more than 10 EVER ). It will be used to deploy and interact with contracts
-- Make sure all previous steps are complete (images and traits are generated and uploaded)
+- Prepare your Multisig wallet (With balance more than 20 EVER ). It will be used to deploy and interact with contracts.
+- Make sure all previous steps are complete (images and traits are generated and uploaded).
 - Navigate to "true-nft" directory: `cd true-nft`
+- Put Multisig wallet address and keys into `.env` file in `components/true-nft-core` directory. There is already `.env.example` file, just replace data and rename this file.
 - Run `yarn deploy`
-- Don't forget to save NFT Root address, Minter address, and keys (Without it you lost access to your collection)
-- Now you can call `MintNft` method of Minter smart contract and mint first NFT in your collection
+- Don't forget to save NFT Root address, Minter address, and keys (Without it you lost access to your collection). They are printed to console.
+- Now you can call `MintNft` method of Minter smart contract and mint first NFT in your collection.
+
+Proceed with your approach guide to learn more.
 
 ## Sources
+
+![Josh](docs/images/Josh.jpg)
+
+
+Made up by the guys who ran the First NFT Collection on EverScale: [waifuston.com](https://waifuston.com). 😎
 
 https://github.com/tonlabs/True-NFT
 https://github.com/benyaminahmed/nft-image-generator

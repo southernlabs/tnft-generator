@@ -35,6 +35,7 @@ You can test your collection on local machine. First make sure you have installe
 - Run `yarn install`
 - Run `lerna bootstrap`
 - Test with `yarn run test-minter-ipfs`. This command will deploy sample collection to local network. 
+- Deploy your generated collection with `yarn run deploy-minter`.
 - If you have not created `.env` file in `./true-nft/components/true-nft-core`, then program will generate new MultiSig wallet. Its address and keys will be on screen. Better to create .env file and put there this address and keys to prevent generation of new wallet every time you run this command.
 - Keys for this collection will be stored in `test-deploy-result.json` file.
 - Copy this file into tnft-explorer for future step: `cp test-deploy-result.json ../tnft-explorer/src`
