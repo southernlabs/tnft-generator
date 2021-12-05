@@ -17,6 +17,8 @@ Layers in this sample (top-down):
 - body
 - background
 
+## ✨ Get started 
+
 This toolset support several methods and solutions of storing images and matadata
 
 | Approach | 🖼️ Images | 📋 Metadata |
@@ -30,6 +32,15 @@ This toolset support several methods and solutions of storing images and matadat
 ✅🪢🟢🟡🟠🔮🔗⛓️🗒️📂📁
 
 
+1. Follow the [🧐 Noobs Guide](/docs/noobs-guide.md) to lear how to setup environment.
+
+2. Choose one of the approaches and follow its deploy guide:
+
+    1. [🌐 Persistent](/docs/persistent-approach-guide.md) 
+    2. [🌐📄 Opensea-like](/docs/opensea-approach-guide.md)
+    3. [📄 Simple](/docs/simple-approach-guide.md) 
+
+
 ## 🪜 Dependencies
 
 Better to run this project in VS Code, but you can use this sources as you want.
@@ -39,13 +50,11 @@ Better to run this project in VS Code, but you can use this sources as you want.
 - Node.js
 - [Tondev](https://github.com/tonlabs/tondev)
 
-```bash
-pip install -r requirements.txt
-```
+Check out [🧐 Noobs Guide](/docs/noobs-guide.md) to lear how to setup and install all this tools.
 
 ## Workflow
 
-- Install all dependencies
+- [Install all dependencies](/docs/noobs-guide.md)
 - Prepare your trait layers and put them in `image-sources` directory
 - Modify `generator.ipynb` to add your traits and new layers. Also set number of images to generate.
 - Run `generator.ipynb` to generate traits and NFT images. Images will be stored in `images-output` directory and traits in `metadata`

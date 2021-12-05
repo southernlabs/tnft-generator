@@ -1,5 +1,7 @@
 # 🚀 Persistnet True NFT guide (All on IPFS)
 
+![ipfs](images/tNFTipfs.jpg)
+
 - 🖼️ Images stored in 🌐 IPFS 
 - 📋 Metadata stored in 🌐 IPFS 
 

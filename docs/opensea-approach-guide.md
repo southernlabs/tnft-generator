@@ -43,8 +43,10 @@ You can test your collection on local machine. First make sure you have installe
 
 ## 5. View your collection with `tnft-explorer`
 
+![ducks](images/tnft-explorer-ducks.png)
+
 - Navigate to "tnft-explorer" directory: `cd ../tnft-explorer`
 - Run `yarn install`
-- ???
-- Run `yarn start`
-- Open http://localhost:3000/ in your browser 
+- Make sure you have copied test-deploy-result.json file after deploying collection
+- Run `yarn start` 
+- Open http://localhost:3000/ in your browser  
