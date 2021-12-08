@@ -40,6 +40,9 @@ This toolset support several methods and solutions of storing images and matadat
     2. [🌐📄 Opensea-like](/docs/opensea-approach-guide.md)
     3. [📄 Simple](/docs/simple-approach-guide.md) 
 
+__You can watch the video tutorial!__
+
+[![Watch the video](https://img.youtube.com/vi/c-uFfD8MCzI/default.jpg)](https://youtu.be/c-uFfD8MCzI)
 
 ## 🪜 Dependencies
 
@@ -133,6 +136,7 @@ This example shows up how to deploy collection to Devnet.
 - Run `yarn deploy`
 - Don't forget to save NFT Root address, Minter address, and keys (Without it you lost access to your collection). They are printed to console.
 - Now you can call `MintNft` method of Minter smart contract and mint first NFT in your collection.
+- Also you can setup price for NFT in `Minter.sol` contract. Change value of MINT_FEE before deploy or use setMintFee(uint128 _newFee) function to change price. To transfer funds from this contract use sendTransaction function. You can use mintNftAdmin() function to mint without paying fees.
 
 Proceed with your approach guide to learn more.
 

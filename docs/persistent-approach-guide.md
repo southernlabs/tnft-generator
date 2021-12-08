@@ -5,6 +5,12 @@
 - 🖼️ Images stored in 🌐 IPFS 
 - 📋 Metadata stored in 🌐 IPFS 
 
+__Watch the video tutorial!__
+
+[![Watch the video](https://img.youtube.com/vi/c-uFfD8MCzI/default.jpg)](https://youtu.be/c-uFfD8MCzI)
+
+https://youtu.be/c-uFfD8MCzI
+
 ## 1. Generate images and traits
 
 - Install all dependencies
