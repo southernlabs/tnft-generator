@@ -1,1 +1,24 @@
-{"Root":{"address":"0:22ce03922620ee833df0d5c986182e6f2eab796ad89eb8d750c3bf1b1e24f351","keys":{"public":"a5c1776bc43add289b76ad786594f125a62ae7f9d149f8d05b2ddac16ae1a8dc","secret":"259f73067df8679ca62a3a9133ad438f33b91a374a4e08b20a58fd49bfd81b7e"}},"Minter":{"address":"0:787975ecef34cc1aea323d88113847f39181b36bf980823592158b77d8a6a43b","keys":{"public":"a5c1776bc43add289b76ad786594f125a62ae7f9d149f8d05b2ddac16ae1a8dc","secret":"259f73067df8679ca62a3a9133ad438f33b91a374a4e08b20a58fd49bfd81b7e"}},"Msig":{"address":"0:cf4950eea57baa6f09125ad1ae8b9b7048b57998f33bdefa97741a1d7aad0d2b","keys":{"public":"821c59e3b2a9e7e2564a37a4dd83087d9278e9f70774a67b59444c1e30567d52","secret":"424a637566a6f753aa9e66795a77f55d96c0553bd276a75dde5ad10bc5902ffa"}},"network":"127.0.0.1"}
+{
+  "Root": {
+    "address": "0:f886bf8b123dc7d85786ce115ff3ce8eba3c6fc2608ab0f2275460f52a9ef933",
+    "keys": {
+      "public": "",
+      "secret": ""
+    }
+  },
+  "Minter": {
+    "address": "0:4aee17c7c37ef885dc61402f75a09088c9cafe396a27573f4fa8632f20bba074",
+    "keys": {
+      "public": "",
+      "secret": ""
+    }
+  },
+  "Msig": {
+    "address": "0:437ea2642dac991c15550ad12cd70ffe5b6381b8920a38053bb6ef99a9200de1",
+    "keys": {
+      "public": "63b67c8acb76fb8a3629a49a92d1f17ac8c095f08f20c7ae9793f81377ee48db",
+      "secret": "40ded34b8116824c931cecc70b6e3bc7cbeafaeb0092f99b55a6d607b8398a23"
+    }
+  },
+  "network": "https://gql.custler.net"
+}

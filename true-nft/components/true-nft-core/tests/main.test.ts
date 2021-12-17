@@ -23,24 +23,7 @@ describe("main test", () => {
   let myDeployedNft: number;
 
   before(async () => {
-    
 
-    if(process.env.MULTISIG_ADDRESS){
-      client = createClient();
-      smcSafeMultisigWallet = new TonContract({
-        client,
-        name: "SafeMultisigWallet",
-        tonPackage: pkgSafeMultisigWallet,
-        address: process.env.MULTISIG_ADDRESS,
-        keys: {
-          public: process.env.MULTISIG_PUBKEY,
-          secret: process.env.MULTISIG_SECRET,
-        },
-      });
-    }
-	
-	// Semi-manual msig deploy, for test network
-	if(!process.env.MULTISIG_ADDRESS){
     client = createClient("http://localhost");
     msigKeys = await client.crypto.generate_random_sign_keys();
     smcSafeMultisigWallet = new TonContract({
@@ -51,7 +34,7 @@ describe("main test", () => {
     });
 		await smcSafeMultisigWallet.calcAddress();
 
-		console.log(`🟡 You are running without specified msig address and keys. Generating msig automatically...`);
+		console.log(`🟡 You are running on local network. Generating msig automatically...`);
 
 		console.log(`Msig address: ${smcSafeMultisigWallet.address}`);
 		console.log(`Msig keys: `,msigKeys);
@@ -62,7 +45,7 @@ describe("main test", () => {
     get_tokens_from_giver(client, smcSafeMultisigWallet.address, 1_000_000_000_000_000)
 
     console.log(`Msig balance: ${msigBalance}`);
-    console.log(` ⚠️ Topup msig balance via tondev:  tondev ct -a ${smcSafeMultisigWallet.address} -v 1000000000000000`);
+    console.log(` ⚠️ Topup msig balance via tondev (if in was not done by this script):  tondev ct -a ${smcSafeMultisigWallet.address} -v 1000000000000000`);
 
     while(!await smcSafeMultisigWallet.getBalance()){}
 		//expect(msigBalance).not.to.be.equal(0);
@@ -74,7 +57,7 @@ describe("main test", () => {
         reqConfirms: 1,
 		  },
 		});
-	}
+
   });
 
   it("deploy first NftRoot", async () => {
@@ -156,6 +139,7 @@ describe("main test", () => {
          1: "https://gateway.pinata.cloud/ipfs/QmRm1273Y9JdaLBVGCg56WKu62zVm1Th9Ks8fe6iCaTGyC",
          2: "https://gateway.pinata.cloud/ipfs/QmV4NanazYAAqzDctkkwKHx2NbdbVAaqS2jom18FcQWsz1",
          3: "https://gateway.pinata.cloud/ipfs/QmV3GNnyxBFNPBANB5UpReFMhdh1T471PVtBbj8K4ZDQn1"},
+         _maxMint: 4
       },
     });
 

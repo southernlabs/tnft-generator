@@ -7,7 +7,7 @@
     "deploy-minter": "yarn --cwd ./components/true-nft-core/ run deploy",
     "deploy": "yarn --cwd ./components/true-nft-core/ run deploy",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --exit -r ts-node/register -r dotenv/config -t 300000 'tests/**/*.test.ts'",
-    "compile": "yarn run",
+    "compile": "yarn --cwd ./components/true-nft-core/ run compile ",
     "test:compile": "npm run compile && npm run test"
   },
   "workspaces": [

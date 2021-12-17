@@ -26,7 +26,7 @@ function App() {
   TonClient.useBinaryLibrary(libWeb);
   const client = new TonClient({
       network: { 
-          endpoints: ['127.0.0.1'] 
+          endpoints: [CONFIG.network] 
       } 
   });
 
@@ -62,6 +62,7 @@ function App() {
     });
     console.log(msig, await msig.getBalance())
     // Mint
+    toast.loading('Minting...');
     try {
       let m = await callThroughMultisig({
         client,
@@ -73,10 +74,10 @@ function App() {
         value: 2_500_000_000,
       });
       console.log("🐋", m)
-      toast.success('Minted')
+      toast.success('Minted');
       FetchNFTs()
     } catch (error) {
-      toast.error("Error")
+      toast.error("Error");
     }
     
   }
@@ -107,6 +108,23 @@ function App() {
     setMyNfts(my)
   }
 
+  const FetchAllNFTs = async () => {
+    let NftRoot = new TonContract({
+      client,
+      name: "NftRoot",
+      address: addrRoot,
+      tonPackage: pkgNftRoot,
+    });
+ 
+    setSmcNftRoot(smcNftRoot);
+    
+    let my = await getAllNfts(client, NftRoot);
+    console.log(my)
+        
+  
+    setMyNfts(my)
+  }
+
   useEffect(() => {
     if(CONFIG.Default){
       toast.error(`You running on default 'test-deploy-result.json'. Please refer to documentation. 
@@ -120,16 +138,21 @@ function App() {
   return (
     <div className="App">
       <Toaster position="top-right"/>
+      <h1 style={{marginTop: "0"}}><a href='https://github.com/southernlabs/tnft-generator'>Demo web app - True NFT explorer</a></h1>
+
+      <p><b>Network: </b>{CONFIG.network}<br />
+        <b>Root:</b> {addrRoot}<br />
+        <b>Minter:</b> {addrMinter}<br />
+        <b>MultiSig:</b> {addrMsig}</p>
       <input placeholder="Collection root address" value={addrRoot} onChange={setRootAddress}></input>
-      <input placeholder="User msig address" value={addrMsig} onChange={setMsigAddress}></input>
-      <br />
       <input placeholder="Minter address" value={addrMinter} onChange={setMinterAddress}></input>
       <br /><br />
       {smcMinter != {} &&
       <button onClick={Mint}>🚀 MINT!</button>
       }
       <br /><br />
-      <button onClick={FetchNFTs}>📁 Fetch NFTs</button>
+      <button onClick={FetchNFTs}>📁 Fetch my NFTs</button> 
+      <button onClick={FetchAllNFTs}>📁 Fetch all NFTs</button>
       <div className="grid-holder">
         <div className="NFTs">
           {myNfts.map((object, i) => 
@@ -167,6 +190,8 @@ const getAddrData = async (
       result: "id",
     })
   ).result;
+
+  console.log("Datas", Datas);
 
   const promises = Datas.map((el) => {
     const _smcData = new TonContract({
@@ -212,7 +237,7 @@ const getMyNfts = async (
     })
   ).value;
 
-  //console.log("codeHashIndex", codeHashIndex)
+  console.log("codeHashIndex", codeHashIndex)
 
   let nfts = [];
   let counter = 0;
@@ -229,6 +254,8 @@ const getMyNfts = async (
     nfts = qwe.result;
   }
 
+  console.log("NFTs",nfts);
+
   const promises = nfts.map((el) => {
     const _smcNft = new TonContract({
       client,
@@ -242,4 +269,50 @@ const getMyNfts = async (
   });
 
   return await Promise.all(promises);
+};
+
+const getAllNfts = async (
+    client,
+    smcNftRoot
+  )=> {
+  
+    const { codeHashData } = (
+      await smcNftRoot.run({
+        functionName: "resolveCodeHashData",
+        input: {},
+      })
+    ).value;
+
+    console.log("code hash data", codeHashData);
+    
+    let nfts = [];
+    let counter = 0;
+
+    while (nfts.length === 0 && counter <= 500) {
+      const qwe = await client.net.query_collection({
+        collection: "accounts",
+        filter: {
+          code_hash: { eq: codeHashData.slice(2) },
+        },
+        result: "id",
+      });
+      counter++;
+      nfts = qwe.result;
+    }
+
+    console.log("Datas", nfts);
+  
+    const promises = nfts.map((el) => {
+      const _smcNft = new TonContract({
+        client,
+        name: "",
+        tonPackage: pkgIndex,
+        address: el.id,
+      });
+      return _smcNft.run({
+        functionName: "getInfo",
+      });
+    });
+  
+    return await Promise.all(promises);
 };

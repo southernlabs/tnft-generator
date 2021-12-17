@@ -8,7 +8,8 @@
 			"inputs": [
 				{"name":"addrRoot","type":"address"},
 				{"name":"images","type":"map(uint256,string)"},
-				{"name":"metadatas","type":"map(uint256,string)"}
+				{"name":"metadatas","type":"map(uint256,string)"},
+				{"name":"_maxMint","type":"uint256"}
 			],
 			"outputs": [
 			]
@@ -31,6 +32,14 @@
 			"name": "setTotalMinted",
 			"inputs": [
 				{"name":"_totalMinted","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setMaxMint",
+			"inputs": [
+				{"name":"_maxMint","type":"uint128"}
 			],
 			"outputs": [
 			]
@@ -73,6 +82,14 @@
 			]
 		},
 		{
+			"name": "maxMint",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"maxMint","type":"uint256"}
+			]
+		},
+		{
 			"name": "totalMinted",
 			"inputs": [
 			],
@@ -100,6 +117,7 @@
 		{"name":"adminPubkey","type":"uint256"},
 		{"name":"adminAddress","type":"address"},
 		{"name":"_addrRoot","type":"address"},
+		{"name":"maxMint","type":"uint256"},
 		{"name":"totalMinted","type":"uint256"},
 		{"name":"MINT_FEE","type":"uint128"},
 		{"name":"_images","type":"map(uint256,string)"},

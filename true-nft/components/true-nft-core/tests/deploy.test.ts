@@ -1,5 +1,5 @@
 import { KeyPair, TonClient } from "@tonclient/core";
-import { createClient } from "@ton-contracts/utils/client";
+import { createClient, NETWORK_MAP } from "@ton-contracts/utils/client";
 import TonContract from "@ton-contracts/utils/ton-contract";
 import { callThroughMultisig } from "@ton-contracts/utils/net";
 import pkgSafeMultisigWallet from "../../../ton-packages/SetCodeMultisig.package"
@@ -28,6 +28,7 @@ describe("Deploy", () => {
 
   before(async () => {
     if(process.env.MULTISIG_ADDRESS){
+      console.log("Multisig: ",process.env.MULTISIG_ADDRESS)
       client = createClient();
       smcSafeMultisigWallet = new TonContract({
         client,
@@ -39,11 +40,15 @@ describe("Deploy", () => {
           secret: process.env.MULTISIG_SECRET,
         },
       });
+
+      await smcSafeMultisigWallet.init();
+      //console.log(smcSafeMultisigWallet);
     }
+
 	
 	// Semi-manual msig deploy, for test network
 	if(!process.env.MULTISIG_ADDRESS){
-    client = createClient("http://localhost");
+    client = createClient();
     msigKeys = await client.crypto.generate_random_sign_keys();
     smcSafeMultisigWallet = new TonContract({
       client,
@@ -85,7 +90,6 @@ describe("Deploy", () => {
   })
 
   it("Parse metadata", async () => {
-    //console.log(metadatas_json);
     metadatas_json.forEach( (e: any) => {
         ipfs_images[e.tokenId] = e.image;
         ipfs_metadatas[e.tokenId] = e.metadata;
@@ -103,6 +107,7 @@ describe("Deploy", () => {
       keys,
     });
     await smcNftRoot.calcAddress();
+    
     await smcSafeMultisigWallet.call({
       functionName: "sendTransaction",
       input: {
@@ -169,6 +174,7 @@ describe("Deploy", () => {
         addrRoot: smcNftRoot.address,
         images: ipfs_images,
         metadatas: ipfs_metadatas,
+        _maxMint: Object.keys(ipfs_metadatas).length
       },
     });
 
@@ -210,7 +216,7 @@ describe("Deploy", () => {
         address:smcSafeMultisigWallet.address,
         keys:smcSafeMultisigWallet.keys
       },
-      network: "127.0.0.1"
+      network: NETWORK_MAP[process.env.NETWORK] || "http://127.0.0.1"
     }
 
     var json = JSON.stringify(result);

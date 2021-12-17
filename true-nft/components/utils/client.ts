@@ -5,6 +5,7 @@ export const NETWORK_MAP = {
   LOCAL: "http://localhost",
   DEVNET: "https://net.ton.dev",
   MAINNET: "https://main.ton.dev",
+  FLD: "https://gql.custler.net",
 };
 
 export const createClient = (url = null) => {

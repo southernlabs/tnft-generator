@@ -17,6 +17,12 @@ Layers in this sample (top-down):
 - body
 - background
 
+__Deployed collection to FLD testnet:__
+
+[`0:f886bf8b123dc7d85786ce115ff3ce8eba3c6fc2608ab0f2275460f52a9ef933`](https://fld.ton.live/accounts/accountDetails?id=0%3Af886bf8b123dc7d85786ce115ff3ce8eba3c6fc2608ab0f2275460f52a9ef933)
+
+Deployed tnft-explorer: [tnft-generator.pages.dev](https://tnft-generator.pages.dev/)
+
 ## ✨ Get started 
 
 This toolset support several methods and solutions of storing images and matadata
@@ -127,12 +133,13 @@ Proceed with [Persistent approach guide](/docs/persistent-approach-guide.md) or 
 
 ## 🚀 Deploying
 
-This example shows up how to deploy collection to Devnet.
+This example shows up how to deploy collection to the actual network.
 
 - Prepare your Multisig wallet (With balance more than 20 EVER ). It will be used to deploy and interact with contracts.
 - Make sure all previous steps are complete (images and traits are generated and uploaded).
 - Navigate to "true-nft" directory: `cd true-nft`
 - Put Multisig wallet address and keys into `.env` file in `components/true-nft-core` directory. There is already `.env.example` file, just replace data and rename this file.
+- `components/true-nft-core/.env` file must contains: `NETWORK=` - one of the networks: *LOCAL, DEVNET, MAINNET, FLD*, `MULTISIG_ADDRESS=`, `MULTISIG_PUBKEY=`, `MULTISIG_SECRET=` should also be set with predeployed SetCodeMultisig wallet. Also make sure this wallet has enough balance.
 - Run `yarn deploy`
 - Don't forget to save NFT Root address, Minter address, and keys (Without it you lost access to your collection). They are printed to console.
 - Now you can call `MintNft` method of Minter smart contract and mint first NFT in your collection.
