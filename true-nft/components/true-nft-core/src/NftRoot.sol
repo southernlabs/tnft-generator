@@ -19,7 +19,7 @@ contract NftRoot is DataResolver, IndexResolver {
     uint256 public adminPubkey;
     address adminAddress;
 
-    uint256 public totalSupply = 2048;
+    uint256 public totalSupply;
 
 
     modifier onlyAdmin() {
@@ -28,11 +28,12 @@ contract NftRoot is DataResolver, IndexResolver {
         _;
     }
 
-    constructor(TvmCell codeIndex, TvmCell codeData) public {
+    constructor(TvmCell codeIndex, TvmCell codeData, uint256 _totalSupply) public {
         tvm.accept();
         _codeIndex = codeIndex;
         _codeData = codeData;
         adminPubkey = msg.pubkey();
+        totalSupply = _totalSupply;
     }
 
     function mintNft(string image, string metadata) public onlyAdmin {
@@ -67,6 +68,11 @@ contract NftRoot is DataResolver, IndexResolver {
     function sendTransaction(address dest, uint128 value, bool bounce, uint8 flags, TvmCell payload) public onlyAdmin {
         dest.transfer(value, bounce, flags, payload);
     }
+
+    function updateTotalSupply(uint256 _totalSupply) public onlyAdmin {
+        totalSupply = _totalSupply;
+    }
+    
 
     function deployBasis(TvmCell codeIndexBasis) public {
         require(msg.value > 0.5 ton, 104);

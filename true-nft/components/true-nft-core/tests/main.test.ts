@@ -90,6 +90,7 @@ describe("main test", () => {
         codeData: (
           await client.boc.get_code_from_tvc({ tvc: pkgData.image })
         ).code,
+        _totalSupply: 2048
       },
     });
 
