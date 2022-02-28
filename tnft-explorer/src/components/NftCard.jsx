@@ -48,7 +48,7 @@ export default function NftCard (props) {
 
     return(
     <div className="NFT-item">
-        <div><img src={image}></img></div>
+        <div><img src={image} alt='NFT image'></img></div>
         <span style={{display:'inline'}}>#{id}</span>
         <br />
         <span style={{fontSize:'10px'}}>{attributes}</span>

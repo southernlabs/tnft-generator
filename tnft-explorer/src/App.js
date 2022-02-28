@@ -147,7 +147,7 @@ function App() {
       <input placeholder="Collection root address" value={addrRoot} onChange={setRootAddress}></input>
       <input placeholder="Minter address" value={addrMinter} onChange={setMinterAddress}></input>
       <br /><br />
-      {smcMinter != {} &&
+      {smcMinter !== {} &&
       <button onClick={Mint}>🚀 MINT!</button>
       }
       <br /><br />
