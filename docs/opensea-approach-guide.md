@@ -31,7 +31,7 @@ We are using pinata.cloud for storing images
 
 You can test your collection on local machine. First make sure you have installed local blockchain in docker.
 
-- Make sure local blockhcain is running. Run `tondev se start`
+- Make sure local blockhcain is running. Run `everdev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
 - Install all dependencies  `yarn install`
 - Run `lerna bootstrap`

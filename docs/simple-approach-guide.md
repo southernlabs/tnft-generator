@@ -30,7 +30,7 @@ In this example all data of NFT is served by your API
 
 You can test your collection on local machine. First make sure you have installed local blockchain in docker.
 
-- Run `tondev se start`
+- Run `everdev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
 - Run `yarn install`
 - Run `lerna bootstrap`

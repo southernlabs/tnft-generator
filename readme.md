@@ -57,7 +57,7 @@ Better to run this project in VS Code, but you can use this sources as you want.
 - Visual Studio Code
 - Python 3.10
 - Node.js
-- [Tondev](https://github.com/tonlabs/tondev)
+- [Everdev](https://github.com/tonlabs/everdev)
 
 Check out [🧐 Noobs Guide](/docs/noobs-guide.md) to lear how to setup and install all this tools.
 
@@ -118,9 +118,9 @@ Proceed with [Opensea-like approach guide](/docs/opensea-approach-guide.md) or [
 
 ![image](docs/images/APIandWeb.jpg)
 
-You can test your collection on local machine. First make sure you have installed local blockchain in docker (tondev node se).
+You can test your collection on local machine. First make sure you have installed local blockchain in docker (everdev node se).
 
-- Run `tondev se start`
+- Run `everdev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
 - Run `yarn install`
 - Run `lerna bootstrap`

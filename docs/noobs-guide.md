@@ -25,9 +25,9 @@ Download this repository from GitHub and unpack it on your computer
 
 Node.js comes with npm but in this project we using yarn, so lets install it: `npm install --global yarn`
 
-2. Install [tondev](https://github.com/tonlabs/tondev). 
+2. Install [Everdev](https://github.com/tonlabs/everdev). 
 
-It is a console utility which helps to run local blockchain. Type in console: `npm install -g tondev`
+It is a console utility which helps to run local blockchain. Type in console: `npm install -g everdev`
 
 ## 4. Configure Python
 
@@ -37,9 +37,9 @@ It is a console utility which helps to run local blockchain. Type in console: `n
 
 ## 5. Configure docker and local blockchain
 
-1. Install Ever OS Startup Edition using tondev:
+1. Install Ever OS Startup Edition using everdev:
 
-`tondev se start`
+`everdev se start`
 
 Make sure you have docker running! This command will download and install local blockchain.
 

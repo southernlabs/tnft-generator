@@ -38,7 +38,7 @@ Set keys and run `./uploaders/ipfs-metadata-uploader.ipynb`
 
 You can test your collection on local machine. First make sure you have installed local blockchain in docker.
 
-- Run `tondev se start`
+- Run `everdev se start`
 - Navigate to "true-nft" directory: `cd true-nft`
 - Run `yarn install`
 - Run `lerna bootstrap`
